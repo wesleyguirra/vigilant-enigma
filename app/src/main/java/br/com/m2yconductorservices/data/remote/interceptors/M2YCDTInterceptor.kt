@@ -20,7 +20,7 @@ private const val UNAUTHORIZED_CODE = 401
 private const val MEDIA_TYPE = "application/json; charset=utf-8"
 
 class M2YCDTInterceptor(
-    encrypt: Boolean = true,
+    encrypt: Boolean = !M2YCDTEnvironment.debug,
     private val encryptRequest: Boolean = encrypt,
     private val decryptResponse: Boolean = encrypt
 ) : Interceptor {

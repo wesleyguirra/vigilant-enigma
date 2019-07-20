@@ -22,6 +22,7 @@ data class UserResponse(
         var email: String?,
         var token: String,
         var has_cards: Boolean,
+        var is_store: Boolean,
         var plan: String?
 )
 

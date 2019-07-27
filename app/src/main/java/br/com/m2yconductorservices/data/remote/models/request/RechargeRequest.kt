@@ -9,7 +9,7 @@ data class RechargeRequest(
         var phoneNumber: String = "",
         var dealerCode: String = "",
         var dealerName: String = "",
-        var amount: Float = 0f,
+        var amount: Int = 0,
         var auth: String = "",
         var date: String = "",
         var orderId: String = "",

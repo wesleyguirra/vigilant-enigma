@@ -29,7 +29,8 @@ data class NewTransferModel(
         var saveInFav: Boolean = false,
         var isFromFavorites: Boolean = false,
         var password: String = "",
-        var cardId: String = ""
+        var cardId: String = "",
+        var storePayment: Boolean = false
 ) : Serializable {
     val isBankTransfer: Boolean
         get() = !bankCode.isNullOrEmpty()
@@ -72,7 +73,7 @@ data class NewTransferModel(
 
 }
 
-fun NewTransferModel.toRequest(originalAccountId: Long) = TransferRequest(amount, description, destinationAccountId, originalAccountId, password, cardId)
+fun NewTransferModel.toRequest(originalAccountId: Long) = TransferRequest(amount, description, destinationAccountId, originalAccountId, password, cardId, storePayment)
 
 fun NewTransferModel.toBankRequest(originalAccountId: Long): TransferBankRequest {
     val isCpf = M2YCDTCpf.isValid(this.cpf)

@@ -1,11 +1,14 @@
 package br.com.m2yconductorservices.data.remote.models.request
 
-data class TransferRequest(val amount: Float,
-                           val description: String?,
-                           val destinationAccount: Long,
-                           val originalAccount: Long,
-                           val password: String?,
-                           val cardId: String?)
+data class TransferRequest(
+    val amount: Float,
+    val description: String?,
+    val destinationAccount: Long,
+    val originalAccount: Long,
+    val password: String?,
+    val cardId: String?,
+    val storePayment: Boolean? = false
+)
 
 data class TransferBankRequest(
         val idOriginAccount: Long,

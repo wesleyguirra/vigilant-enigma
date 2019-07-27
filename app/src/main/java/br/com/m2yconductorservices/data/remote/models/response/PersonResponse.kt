@@ -11,5 +11,6 @@ class PersonResponse(
     var numeroIdentidade: String?,
     var orgaoExpedidorIdentidade: String?,
     var unidadeFederativaIdentidade: String?,
-    var dataEmissaoIdentidade: String?
+    var dataEmissaoIdentidade: String?,
+    var isStore: Boolean?
 )

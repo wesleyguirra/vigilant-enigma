@@ -10,7 +10,7 @@ data class RechargeRequest(
         var dealerCode: String = "",
         var dealerName: String = "",
         var amount: Int = 0,
-        var auth: String = "",
+        var auth: String? = "",
         var date: String = "",
         var orderId: String = "",
         var password: String = "",

@@ -17,7 +17,8 @@ data class TicketModel(
         var interest: Float? = 0f,
         var fine: Float? = 0f,
         var charges: Float? = 0f,
-        var dueDate: String? = null
+        var dueDate: String? = null,
+        var linhaDigitavel: String? = null
 
         ) : Serializable
 

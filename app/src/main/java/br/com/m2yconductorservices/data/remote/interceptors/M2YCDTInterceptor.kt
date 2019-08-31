@@ -29,7 +29,7 @@ class M2YCDTInterceptor(
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = buildNewRequest(chain.request())
         val response = chain.proceed(request)
-        checkUnnauthorizedHttpCode(response)
+        checkUnnauthorizedHttpCode(request, response)
         saveCookieIfAny(response)
         return createNewResponseWithBody(response)
     }
@@ -78,8 +78,9 @@ class M2YCDTInterceptor(
         )
     }
 
-    private fun checkUnnauthorizedHttpCode(response: Response) {
-        if (response.code() == UNAUTHORIZED_CODE) {
+    private fun checkUnnauthorizedHttpCode(request: Request, response: Response) {
+        val authPath = response.request().url().pathSegments().contains("login") || response.request().url().pathSegments().contains("signin")
+        if (response.code() == UNAUTHORIZED_CODE && !authPath) {
             Handler(Looper.getMainLooper()).post { M2YCDTUserUnauthorizedBus.setEvent(Any()) }
         }
     }

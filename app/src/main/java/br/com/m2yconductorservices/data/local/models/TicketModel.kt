@@ -23,5 +23,5 @@ data class TicketModel(
         ) : Serializable
 
 enum class TicketType {
-    INVOICE, ADD_CREDIT, PAYMENT
+    INVOICE, ADD_CREDIT, PAYMENT, CARD_REQUEST
 }

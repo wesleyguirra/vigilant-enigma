@@ -1,4 +1,4 @@
-
+[![](https://jitpack.io/v/wesleyguirra/vigilant-enigma.svg)](https://jitpack.io/#wesleyguirra/vigilant-enigma)
 # ANDROID CONDUCTOR SERVICES 
 
 ## Synopsis ##

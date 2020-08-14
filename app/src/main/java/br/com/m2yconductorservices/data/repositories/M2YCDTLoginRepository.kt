@@ -51,7 +51,8 @@ object M2YCDTLoginRepository {
         return SavedLoginModel(
                 M2YCDTPersistUserInformation.name(),
                 M2YCDTPersistUserInformation.cpf(),
-                M2YCDTPersistUserInformation.password())
+                M2YCDTPersistUserInformation.password(),
+                M2YCDTPersistUserInformation.storeLogin())
     }
 
     fun getUserAccountId() = M2YCDTPersistUserInformation.accountId()

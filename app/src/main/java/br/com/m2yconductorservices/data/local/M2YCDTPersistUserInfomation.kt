@@ -13,6 +13,7 @@ object M2YCDTPersistUserInformation {
     private var userAccounts: AccountPageResponse? = null
     private var password: String = ""
     private var firstTime: Boolean = false
+    private var storeLogin: Boolean = false
     private var listAccounts: List<AccountResponse>? = null
     private var phone: String? = null
 
@@ -183,6 +184,12 @@ object M2YCDTPersistUserInformation {
         return firstTime()
     }
 
+    fun storeLogin(): Boolean = storeLogin
+    fun storeLogin(newStoreLogin: Boolean): Boolean {
+        storeLogin = newStoreLogin
+        return storeLogin()
+    }
+
     fun cdtAccessToken(): String = cdtTokenResponse.access_token
     fun cdtAccessToken(newAccessToken: String): String {
         cdtTokenResponse.access_token = newAccessToken
@@ -227,6 +234,7 @@ object M2YCDTPersistUserInformation {
         password = ""
         firstTime = false
         listAccounts = null
+        storeLogin = false
     }
 
 }

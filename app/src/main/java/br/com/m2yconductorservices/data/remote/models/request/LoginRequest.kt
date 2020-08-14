@@ -4,7 +4,8 @@ import java.io.Serializable
 
 data class LoginRequest(
         var cpf: String,
-        var password: String
+        var password: String,
+        var storeLogin: Boolean
 )
 
 data class LoginSignUpRequest(

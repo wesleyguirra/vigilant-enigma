@@ -220,6 +220,12 @@ object M2YCDTPersistUserInformation {
         return persistedUser?.has_cards == true
     }
 
+    fun hasUnpaidTickets() = persistedUser?.has_unpaid_tickets == true
+    fun hasUnpaidTickets(hasUnpaidTickets: Boolean): Boolean {
+        persistedUser?.has_unpaid_tickets = hasUnpaidTickets
+        return persistedUser?.has_unpaid_tickets == true
+    }
+
     fun isCdtTokenInvalid(): Boolean {
         return (SystemClock.elapsedRealtime() - cdtTokenSystemTime()) > cdtExpiresIn()
     }
